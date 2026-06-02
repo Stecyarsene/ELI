@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Fonts ── */
+@layer base {
+  html { font-family: 'DM Sans', sans-serif; }
+  h1,h2,h3 { font-family: 'Syne', sans-serif; }
+  code,pre { font-family: 'JetBrains Mono', monospace; }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 99px; }
+
+/* ── Focus visible global (WCAG 2.1 AA) ── */
+:focus-visible {
+  outline: 2px solid #00A86B;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Mode Bougie ── */
+.mode-bougie-active .upload-btn,
+.mode-bougie-active .network-btn {
+  opacity: 0.35;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+/* ── Animations globales ── */
+@keyframes slideUpDrawer {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes orbFloat {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%     { transform: translateY(-28px) scale(1.04); }
+}
